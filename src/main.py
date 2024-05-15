@@ -401,8 +401,42 @@ kmkrv_mbtcp_params = (kmkrv_slave_address, kmkrv_port, kmkrv_unit_id, kmkrv_time
 kmkrv_common_params = [kmkrv_obj_params, kmkrv_num_params, kmkrv_mbtcp_params, kmkrv_ini_txt_params]    # Common parameters for object.
 
 
+# VZU Nord  (vnord).
+
+vnord_num_params = 5                            # Number of parameters of object.
+# Information about project for ini.txt.
+vnord_obj_params = ("VZU Nord",
+                    "ВЗУ Норд",
+                    r"c:\Отчетность по работе станций\ВЗУ Норд",
+                    r"..\reports\vzu_nord",
+                    "vzu_nord",
+                    "",
+                    ""
+                    )
+# The header of pdf report.
+vnord_pdf_table_head = (r"\n№\n\n\n",
+                        r"\nДата/время\n\n\n",
+                        r"\nОсмос, м3\n\n\n",
+                        r"\nРЧВ, м3\n\n\n",
+                        r"\nВход, м3\n\n\n",
+                        r"\nВыход 1, м3\n\n",
+                        r"\nВыход 2, м3\n\n",
+                        )
+# Set the mask for pdf table columns.
+vnord_pdf_table_mask = ("00000", "0000.00.00  00:00", "000000.0", "000000.0", "000000.0", "000000.0", "000000.0")
+# Parameters of ini.txt.
+vnord_ini_txt_params = [vnord_obj_params, vnord_pdf_table_head, vnord_pdf_table_mask]
+# MBTCP parameters.
+vnord_slave_address = '192.168.238.50'
+vnord_port = 503
+vnord_unit_id = 1
+vnord_timeout = 15.0
+vnord_mbtcp_params = (vnord_slave_address, vnord_port, vnord_unit_id, vnord_timeout)
+# List of kmkrv object parameters.
+vnord_common_params = [vnord_obj_params, vnord_num_params, vnord_mbtcp_params, vnord_ini_txt_params]    # Common parameters for object.
+
 # List of objects.
-objects_com_params = [vboro_common_params, vtepl_common_params, kmkrv_common_params]
+objects_com_params = [vboro_common_params, vtepl_common_params, kmkrv_common_params, vnord_common_params]
 
 # Check existence of ini.txt file.
 for object in objects_com_params:
