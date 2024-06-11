@@ -4,5 +4,5 @@ water volume per day). This requires a program created in your PLC (programmable
 PLC some code that provides modbus registers and renewable data rewritten into this registers every midnight, so that the Client polls
 these registers after midnight daily and gets required data.
     The way the Client store data from PLCs is saving data as text files into 'reports' folder in the project directory using different folders in the
-'reports'. TXT files have the specified format using semicolon delimiter (;) to devide rows to columns. There is a feature implemented in the Client
+'reports'. TXT files have the specified format using semicolon delimiter (;) to divide rows to columns. There is a feature implemented in the Client
 allowing to create a PDF document from a TXT file.
